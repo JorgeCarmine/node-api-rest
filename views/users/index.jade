@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+
+    h1 Usuarios
+    div.container
+
+        table.table
+            thead.thead-inverse
+                tr
+                    th #
+                    th Nombre
+                    th Apellido Paterno
+                    th Apellido Materno
+            tbody
+                each user in users
+                    tr
+                        th(scope='row') #{ user.Usuario_ID }
+                        td #{ user.Nombre_Usuario }
+                        td #{ user.Apellido_Paterno }
+                        td #{ user.Apellido_Materno }

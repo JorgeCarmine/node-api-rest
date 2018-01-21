@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+
+    h1 Tienda Gamer
+    div.container
+        
+        form(action='login' method='post')
+            h2 Iniciar sesión
+            div.row
+                div.col-sm-12.form-group
+                    label Email
+                    input.form-control(name='email' placeholder='Email' value='#{ (user) ? user.email : "" }')
+                div.col-sm-12.form-group
+                    label Password
+                    input.form-control(name='password' placeholder='Password' value='#{ (user) ? user.password : "" }')
+            div.row
+                div.col-sm-12.form-group.text-right
+                    button.btn.btn-primary(type='submit')
+                        Iniciar Ok
+        if (errors)
+            each error in errors
+                div.alert.alert-warning #{ error.message }
+        
+        if (error_message) 
+            ! #{ error_message }
