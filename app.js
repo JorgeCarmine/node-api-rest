@@ -74,4 +74,15 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-// 192.168.100.2
+/*
+module.exports = {
+    MYSQL: {
+        HOST: '192.168.100.2',
+        USER: 'root',
+        PASSWORD: 'Bitware2016',
+        DATABASE: 'pueblobonito',
+        PORT: 3306
+    }
+}
+
+*/
