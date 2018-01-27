@@ -11,7 +11,7 @@ const sequelize = new Sequelize({
 });
 
 const Product = sequelize.define('products', {
-    id: { type: Sequelize.INTEGER, primaryKey: true},
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     name: Sequelize.STRING,
     description: Sequelize.STRING,
     price: Sequelize.DECIMAL

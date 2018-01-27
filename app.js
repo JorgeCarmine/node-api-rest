@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session')
 var flash = require('connect-flash');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
@@ -40,6 +41,14 @@ app.use(flash());
 app.use('/', index); // Views
 app.use('/api', api); // Api Rest
 
+mongoose.connect('mongodb://localhost/shop', (err, res) => {
+  if (err) {
+    throw err;
+  } else {
+    console.log('CONECTED TO MONGO DB');
+  }
+});
+
 // app.use('/users', users);
 app.use('/products', products);
 // app.use('/activities', activities);
@@ -64,3 +73,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// 192.168.100.2
