@@ -49,7 +49,7 @@ mongoose.connect('mongodb://localhost/shop', (err, res) => {
   }
 });
 
-// app.use('/users', users);
+app.use('/users', users);
 app.use('/products', products);
 // app.use('/activities', activities);
 

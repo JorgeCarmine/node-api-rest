@@ -31,7 +31,7 @@ router.post('/login',
       errors.push({message: 'El usuario solo debe contener letras'})
     }
     if (email.length < 1) {
-      errors.push({ message: 'El unusario no puede estar vacio' })
+      errors.push({ message: 'El usuario no puede estar vacio' })
     }
     if (password.length < 6) {
       errors.push({ message: 'La contraseña no puede estar vacia' })      
@@ -68,8 +68,8 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/login');
 });
 
-router.get('/products', productsController.getProduct);
+// router.get('/products', productsController.getProduct);
 
-router.get('/users', usersController.getUsers)
+// router.get('/users', usersController.getUsers)
 
 module.exports = router;
