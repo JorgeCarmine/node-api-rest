@@ -41,7 +41,7 @@ app.use(flash());
 app.use('/', index); // Views
 app.use('/api', api); // Api Rest
 
-mongoose.connect('mongodb://localhost/shop', (err, res) => {
+mongoose.connect('mongodb://localhost/shop', { useNewUrlParser: true }, (err, res) => {
   if (err) {
     throw err;
   } else {
